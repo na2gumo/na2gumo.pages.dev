@@ -66,61 +66,65 @@
       </main>
       <aside>
         <div class="discord-ct">
-          <div class="discord">
-            <h2>Discord Status</h2>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              style="position: absolute; width: 0; height: 0"
-            >
-              <defs>
-                <mask id="avatar-circle-mask">
-                  <circle cx="60" cy="60" r="60" fill="white" />
-                </mask>
-              </defs>
-            </svg>
+          <h2>Discord Status</h2>
+          <div class="discord-main-ct">
+            <div class="discord">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                style="position: absolute; width: 0; height: 0"
+              >
+                <defs>
+                  <mask id="avatar-circle-mask">
+                    <circle cx="60" cy="60" r="60" fill="white" />
+                  </mask>
+                </defs>
+              </svg>
 
-            <div class="discord-avatar-ct">
-              <div id="avatar-dummy" class="pulse"></div>
-              <div class="discord-avatar hide">
-                <svg width="120" height="120" viewBox="0 0 120 120">
-                  <foreignObject
-                    x="0"
-                    y="0"
-                    width="120"
-                    height="120"
-                    mask="url(#avatar-circle-mask)"
+              <div class="discord-avatar-ct">
+                <div id="avatar-dummy" class="pulse"></div>
+                <div class="discord-avatar hide">
+                  <svg width="120" height="120" viewBox="0 0 120 120">
+                    <foreignObject
+                      x="0"
+                      y="0"
+                      width="120"
+                      height="120"
+                      mask="url(#avatar-circle-mask)"
+                    >
+                      <img id="davatar"></img>
+                    </foreignObject>
+                  </svg>
+                  <svg
+                    class="deco-svg"
+                    width="128"
+                    height="128"
+                    viewBox="0 0 128 128"
                   >
-                    <img id="davatar"></img>
-                  </foreignObject>
-                </svg>
-                <svg
-                  class="deco-svg"
-                  width="128"
-                  height="128"
-                  viewBox="0 0 128 128"
-                >
-                  <foreignObject x="0" y="0" width="128" height="128">
-                    <img id="dcollectible"></img>
-                  </foreignObject>
-                </svg>
+                    <foreignObject x="0" y="0" width="128" height="128">
+                      <img id="dcollectible"></img>
+                    </foreignObject>
+                  </svg>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="discord-status">
-            <span>I am </span>
-            <span id="ds-label" class="pulse">...</span>
-          </div>
-          <div class="discord-activity">
-            <span id="da-type"></span>
-            <span id="da-name"></span>
-            <div class="listening-ct hide">
-              <div>
-                <div id="music-album"></div>
+            <div>
+              <div class="discord-status">
+                <span>I am </span>
+                <span id="ds-label" class="pulse">...</span>
               </div>
-              <div class="listening-detail-ct">
-                <h3 id="music-title">No title</h3>
-                <p id="music-artist">No artist</p>
-                <p id="music-time"></p>
+              <div class="discord-activity">
+                <span id="da-type"></span>
+                <span id="da-name"></span>
+                <div class="listening-ct hide">
+                  <div>
+                    <div id="music-album"></div>
+                  </div>
+                  <div class="listening-detail-ct">
+                    <h3 id="music-title">No title</h3>
+                    <p id="music-artist">No artist</p>
+                    <p id="music-time"></p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -180,5 +184,9 @@
   }
   a:hover {
     color: var(--link-hover-color);
+  }
+
+  .hide {
+    display: none;
   }
 </style>

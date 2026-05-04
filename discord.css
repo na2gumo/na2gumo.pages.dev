@@ -1,5 +1,5 @@
 .discord-ct {
-  height: 400px;
+  height: max-content;
 }
 
 .discord {
@@ -77,4 +77,24 @@
   white-space: nowrap;
   text-overflow: ellipsis;
   margin: 0;
+}
+
+@media (min-width: 768px) {
+  .discord-ct {
+    padding-bottom: 2em;
+  }
+  .discord-main-ct {
+    display: flex;
+    justify-content: center;
+    text-align: left;
+  }
+  .discord {
+    margin: 0 2em;
+  }
+  .listening-ct {
+    flex-direction: row;
+  }
+  .listening-detail-ct {
+    text-align: left;
+  }
 }
