@@ -1,0 +1,184 @@
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="stylesheet" href="/index.css" />
+    <link rel="stylesheet" href="/discord.css" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Hello!</title>
+  </head>
+  <body>
+    <div class="bg"></div>
+    <div class="main-ct">
+      <main>
+        <div class="name-ct">
+          <h1 class="less-margin">natsugumo</h1>
+          <img
+            src="me.avif"
+            width="200"
+            height="200"
+            style="border-radius: 50%"
+          />
+          <p class="js" id="splash"></p>
+          <noscript>
+            <p>🎉 JavaScript disabled! Good first step.</p>
+            <p>
+              Read <a href="https://www.eff.org/issues/privacy">this</a> if you
+              want to enhance your privacy.
+            </p>
+          </noscript>
+        </div>
+        <div class="links-ct">
+          <h2 class="less-margin">Links</h2>
+          <div>
+            <div class="links">
+              <a href="https://mi.cbrx.io/@n2">
+                <div>
+                  <img src="logos/misskey.svg" />
+                </div>
+              </a>
+            </div>
+            <div class="links">
+              <a href="https://x.com/n2gm_vrc">
+                <div>
+                  <img src="logos/x.svg" style="scale: 0.8" />
+                </div>
+              </a>
+            </div>
+            <div class="links">
+              <a href="https://visualizer.eggsy.xyz/1397732710600151110">
+                <div>
+                  <img src="logos/discord.svg" />
+                </div>
+              </a>
+            </div>
+            <div class="links">
+              <a
+                href="https://vrchat.com/home/user/usr_e94231c2-b1b5-41a3-a09a-be4496aa99a9"
+              >
+                <div>
+                  <img src="logos/vrchat.svg" style="scale: 0.95" />
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </main>
+      <aside>
+        <div class="discord-ct">
+          <div class="discord">
+            <h2>Discord Status</h2>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              style="position: absolute; width: 0; height: 0"
+            >
+              <defs>
+                <mask id="avatar-circle-mask">
+                  <circle cx="60" cy="60" r="60" fill="white" />
+                </mask>
+              </defs>
+            </svg>
+
+            <div class="discord-avatar-ct">
+              <div id="avatar-dummy" class="pulse"></div>
+              <div class="discord-avatar hide">
+                <svg width="120" height="120" viewBox="0 0 120 120">
+                  <foreignObject
+                    x="0"
+                    y="0"
+                    width="120"
+                    height="120"
+                    mask="url(#avatar-circle-mask)"
+                  >
+                    <img id="davatar"></img>
+                  </foreignObject>
+                </svg>
+                <svg
+                  class="deco-svg"
+                  width="128"
+                  height="128"
+                  viewBox="0 0 128 128"
+                >
+                  <foreignObject x="0" y="0" width="128" height="128">
+                    <img id="dcollectible"></img>
+                  </foreignObject>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="discord-status">
+            <span>I am </span>
+            <span id="ds-label" class="pulse">...</span>
+          </div>
+          <div class="discord-activity">
+            <span id="da-type"></span>
+            <span id="da-name"></span>
+            <div class="listening-ct hide">
+              <div>
+                <div id="music-album"></div>
+              </div>
+              <div class="listening-detail-ct">
+                <h3 id="music-title">No title</h3>
+                <p id="music-artist">No artist</p>
+                <p id="music-time"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </body>
+</html>
+
+<script>
+  const generateSplash = () => {
+    const splashes = [
+      "VRChat is free on Steam!",
+      "Fuck Unity.",
+      "水色ネメシスはあなたの傍に。",
+      "VRChatはお金が溶けるゲームです。",
+      "Falling in Love",
+      "Privacy is for the people.",
+      "月の下で、あなたと二人きり。",
+      "永遠を信じてみたかった＿＿",
+    ];
+    const i = Math.floor(Math.random() * splashes.length);
+    return splashes[i];
+  };
+  document.getElementById("splash").textContent = generateSplash();
+</script>
+<script src="index.js"></script>
+<script src="lanyard.js" async></script>
+
+<style>
+  :root {
+    --bg-image: url("/bg.avif");
+    --main-bg-color: #0f0c40;
+    --main-text-color: #f1f5f9;
+    --sub-text-color: #cbd5e1;
+    --link-text-color: #818cf8;
+    --link-hover-color: #a5b4fc;
+  }
+
+  html {
+    background-color: var(--main-bg-color);
+    color: var(--main-text-color);
+  }
+  body {
+    max-width: min(600px, 100% - 100px);
+    text-align: center;
+    margin: auto auto;
+  }
+
+  p {
+    color: var(--sub-text-color);
+  }
+
+  a {
+    color: var(--link-text-color);
+    transition: color 0.25s ease;
+  }
+  a:hover {
+    color: var(--link-hover-color);
+  }
+</style>

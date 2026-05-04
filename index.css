@@ -1,0 +1,110 @@
+.bg {
+  position: fixed;
+  transform: translate(0, 0);
+  z-index: -1;
+  inset: -30px;
+  filter: blur(5px) brightness(0.5);
+  background: var(--main-bg-color) var(--bg-image) center/cover no-repeat;
+}
+.name-ct,
+.links-ct,
+.discord-ct {
+  padding: 0.5em 2em;
+  border: 2px solid whitesmoke;
+  border-radius: 20px;
+  backdrop-filter: blur(10px) brightness(1.25);
+  margin: 1em 0;
+}
+
+.less-margin {
+  margin: 0.25em;
+}
+
+main > h1 {
+  font-weight: 200;
+}
+
+main > h2 {
+  font-weight: 300;
+}
+
+#splash {
+  text-align: center;
+  text-wrap: balance;
+  @supports (word-break: auto-phrase) {
+    word-break: auto-phrase;
+  }
+}
+
+.links-ct > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 0.25em;
+}
+
+.links {
+  border: 2px solid var(--sub-text-color);
+  padding: 0.3em;
+  border-radius: 25%;
+}
+
+.links > a > div {
+  width: 32px;
+  height: 32px;
+}
+
+.links > a > div > img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.jump {
+  animation: jump 0.75s linear 0s 1 forwards;
+}
+
+@keyframes jump {
+  0% {
+    transform: translateY(0px);
+  }
+  20% {
+    transform: translateY(-15px);
+  }
+  40% {
+    transform: translateY(0px);
+  }
+  60% {
+    transform: translateY(-6px);
+  }
+  80% {
+    transform: translateY(0px);
+  }
+  90% {
+    transform: translateY(-4px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.pulse {
+  color: #d4d4d4;
+  animation: pulseAnim 2s ease 0s infinite;
+}
+
+@keyframes pulseAnim {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.hide {
+  display: none;
+}
