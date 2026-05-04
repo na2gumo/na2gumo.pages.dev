@@ -93,6 +93,8 @@
   }
   .listening-ct {
     flex-direction: row;
+    align-items: center;
+    justify-content: start;
   }
   .listening-detail-ct {
     text-align: left;
