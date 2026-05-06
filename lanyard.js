@@ -159,12 +159,16 @@ const updateTimeStamp = (startStr, endStr) => {
     const totalTimeStr = `${totalHour ? `${padZero(totalHour)}:` : ""}${padZero(totalMinute)}:${padZero(totalSecond)}`;
     document.getElementById("music-time").textContent =
       `${currTimeStr}/${totalTimeStr}`;
+    document.getElementById("da-time").textContent = "";
   } else {
-    const timestamp = Number(start ?? end);
+    const timestamp = Number(startStr ?? endStr);
     const diff = Math.abs(timestamp - Date.now());
     const hour = Math.floor(diff / 1000 / 60 / 60);
     const min = Math.floor(diff / 1000 / 60) % 60;
     const sec = Math.floor(diff / 1000) % 60;
+    const timeStr = `${hour ? `${padZero(hour)}:` : ""}${padZero(min)}:${padZero(sec)}`;
+    const shuffix = timestamp > Date.now() ? "left" : "elapsed";
+    document.getElementById("da-time").textContent = `${timeStr} ${shuffix}`;
   }
   setTimeout(
     () => updateTimeStamp(rpcStart, rpcEnd),

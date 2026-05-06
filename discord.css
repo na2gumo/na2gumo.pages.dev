@@ -67,7 +67,8 @@
   width: min(600px, 100% - 10px);
 }
 
-#music-time {
+#music-time,
+#da-time {
   margin: 0;
 }
 
